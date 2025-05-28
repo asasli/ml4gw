@@ -146,7 +146,7 @@ class Hdf5TimeSeriesDataset(torch.utils.data.IterableDataset):
 
         self.sizes, self.valid, self.cache_paths, self.num_valid = {}, {}, {}, {}
         for fname in self.fnames:
-            basename = os.path.basename(fname).replace(".h5", “")
+            basename = os.path.basename(fname).replace(".h5", "")
             if self.cache_dir is not None:
                 os.makedirs(self.cache_dir, exist_ok=True)
                 cache_path = os.path.join(self.cache_dir, f"{basename}_{mode}_valid.npy")
